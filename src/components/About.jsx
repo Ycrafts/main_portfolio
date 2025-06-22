@@ -50,7 +50,7 @@ const About = () => {
             When I'm not coding, you can usually find me playing bass guitar with my band or hanging out with my friends and families.
           </p>
           <a
-            href={"/src/assets/Yonatan-Assefa-Mekonnen-Resume .pdf"}
+            href={"/Yonatan-Assefa-Mekonnen-Resume .pdf"}
             className="flex items-center space-x-2 bg-accent-orange text-white font-bold py-3 px-3 rounded-lg hover:opacity-90 transition-opacity"
             target="_blank"
             rel="noopener noreferrer"
