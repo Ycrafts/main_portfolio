@@ -194,6 +194,7 @@ const Projects = () => {
 function HoverImageSwitcher({ images, title }) {
   const [index, setIndex] = React.useState(0);
   const [hovered, setHovered] = React.useState(false);
+  const [loaded, setLoaded] = React.useState(Array(images.length).fill(false));
 
   React.useEffect(() => {
     if (!hovered) return;
@@ -207,6 +208,14 @@ function HoverImageSwitcher({ images, title }) {
     if (!hovered) setIndex(0);
   }, [hovered]);
 
+  const handleImageLoad = (i) => {
+    setLoaded((prev) => {
+      const arr = [...prev];
+      arr[i] = true;
+      return arr;
+    });
+  };
+
   return (
     <div
       className="w-full h-full flex items-center justify-center aspect-video"
@@ -215,13 +224,21 @@ function HoverImageSwitcher({ images, title }) {
       style={{ cursor: images.length > 1 ? 'pointer' : 'default', position: 'relative' }}
     >
       {images.map((img, i) => (
-        <img
-          key={i}
-          src={img}
-          alt={title + ' screenshot ' + (i + 1)}
-          className={`object-contain max-h-full max-w-full transition-opacity duration-700 absolute top-0 left-0 right-0 bottom-0 m-auto ${i === index ? 'opacity-100 z-10' : 'opacity-0 z-0'}`}
-          style={{ border: 'none', borderRadius: 0, boxShadow: 'none', background: 'none', margin: 'auto', padding: 0 }}
-        />
+        <React.Fragment key={i}>
+          {!loaded[i] && (
+            <div
+              className={`absolute top-0 left-0 right-0 bottom-0 m-auto w-full h-full bg-gray-200 animate-pulse rounded-xl z-0`}
+              style={{ border: 'none', borderRadius: 0, boxShadow: 'none', background: 'none', margin: 'auto', padding: 0 }}
+            />
+          )}
+          <img
+            src={img}
+            alt={title + ' screenshot ' + (i + 1)}
+            onLoad={() => handleImageLoad(i)}
+            className={`object-contain max-h-full max-w-full transition-opacity duration-700 absolute top-0 left-0 right-0 bottom-0 m-auto ${i === index && loaded[i] ? 'opacity-100 z-10' : 'opacity-0 z-0'}`}
+            style={{ border: 'none', borderRadius: 0, boxShadow: 'none', background: 'none', margin: 'auto', padding: 0 }}
+          />
+        </React.Fragment>
       ))}
     </div>
   );
