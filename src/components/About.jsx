@@ -25,7 +25,6 @@ const About = () => {
           <div className="relative w-full h-full flex items-center justify-center">
             <img src={ProfileImg} alt="Profile" className="object-contain max-w-full max-h-[500px] rounded-xl z-10" />
             <div className="absolute inset-0 rounded-xl pointer-events-none z-20 border-4 border-accent-orange" />
-            {/* Melting corners: four radial fades */}
             <div className="absolute left-0 top-0 w-16 h-16" style={{background: 'radial-gradient(circle at top left, rgba(255,255,255,0.0) 60%, rgba(255,255,255,1) 100%)'}} />
             <div className="absolute right-0 top-0 w-16 h-16" style={{background: 'radial-gradient(circle at top right, rgba(255,255,255,0.0) 60%, rgba(255,255,255,1) 100%)'}} />
             <div className="absolute left-0 bottom-0 w-16 h-16" style={{background: 'radial-gradient(circle at bottom left, rgba(255,255,255,0.0) 60%, rgba(255,255,255,1) 100%)'}} />
