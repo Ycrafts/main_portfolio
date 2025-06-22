@@ -1,6 +1,7 @@
 import React from 'react';
 import { FiArrowUpRight } from 'react-icons/fi';
 import { motion } from 'framer-motion';
+import ProfileImg from '../assets/images/profile.jpg';
 
 const About = () => {
   const imageVariants = {
@@ -14,13 +15,22 @@ const About = () => {
         
         {/* Image Column */}
         <motion.div 
-          className="w-full h-[400px] md:h-[600px] bg-secondary rounded-lg flex items-center justify-center"
+          className="flex items-center justify-center bg-secondary rounded-xl shadow-lg mx-auto max-w-[350px] max-h-[500px] overflow-hidden relative"
+          style={{ width: 'auto', height: 'auto' }}
           variants={imageVariants}
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, amount: 0.3 }}
         >
-          <span className="text-text-secondary">Your Image Here</span>
+          <div className="relative w-full h-full flex items-center justify-center">
+            <img src={ProfileImg} alt="Profile" className="object-contain max-w-full max-h-[500px] rounded-xl z-10" />
+            <div className="absolute inset-0 rounded-xl pointer-events-none z-20 border-4 border-accent-orange" />
+            {/* Melting corners: four radial fades */}
+            <div className="absolute left-0 top-0 w-16 h-16" style={{background: 'radial-gradient(circle at top left, rgba(255,255,255,0.0) 60%, rgba(255,255,255,1) 100%)'}} />
+            <div className="absolute right-0 top-0 w-16 h-16" style={{background: 'radial-gradient(circle at top right, rgba(255,255,255,0.0) 60%, rgba(255,255,255,1) 100%)'}} />
+            <div className="absolute left-0 bottom-0 w-16 h-16" style={{background: 'radial-gradient(circle at bottom left, rgba(255,255,255,0.0) 60%, rgba(255,255,255,1) 100%)'}} />
+            <div className="absolute right-0 bottom-0 w-16 h-16" style={{background: 'radial-gradient(circle at bottom right, rgba(255,255,255,0.0) 60%, rgba(255,255,255,1) 100%)'}} />
+          </div>
         </motion.div>
 
         {/* Text Content Column */}
@@ -40,12 +50,17 @@ const About = () => {
           <p className="text-text-secondary text-lg leading-relaxed mb-8">
             When I'm not coding, you can usually find me playing bass guitar with my band or hanging out with my friends and families.
           </p>
-          <button className="flex items-center space-x-2 bg-accent-orange text-white font-bold py-3 px-6 rounded-lg hover:opacity-90 transition-opacity">
-            <span>My story, my resume</span>
+          <a
+            href={"/src/assets/Yonatan-Assefa-Mekonnen-Resume .pdf"}
+            className="flex items-center space-x-2 bg-accent-orange text-white font-bold py-3 px-3 rounded-lg hover:opacity-90 transition-opacity"
+            target="_blank"
+            rel="noopener noreferrer"
+            download
+          >
+            <span>Resume</span>
             <FiArrowUpRight size={20} />
-          </button>
+          </a>
         </div>
-
       </div>
     </section>
   );

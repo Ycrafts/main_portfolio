@@ -1,22 +1,24 @@
 import React from 'react';
 import { TypeAnimation } from 'react-type-animation';
+import MeImg from '../assets/images/me.JPG';
 
 const Hero = () => {
   return (
     <section className="min-h-screen flex flex-col justify-center items-center text-center p-8 relative overflow-hidden">
       
       {/* Decorative Framing Curves */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
-        <div className="w-[700px] h-[600px] md:w-[900px] md:h-[750px] border-2 border-accent-orange animate-blob opacity-20"></div>
-        <div className="absolute top-0 left-0 w-[800px] h-[700px] md:w-[1200px] md:h-[1000px] border border-secondary animate-blob-slow opacity-20"></div>
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 pointer-events-none select-none">
+        <svg viewBox="0 0 600 500" width="600" height="500" className="blob-bg">
+          <path fill="#E95A2B" fillOpacity="0.08" d="M421.5,41.5Q484,83,497,166.5Q510,250,453,312.5Q396,375,308,420Q220,465,144,410Q68,355,61,252.5Q54,150,134,90Q214,30,308,32Q402,34,421.5,41.5Z" />
+        </svg>
       </div>
 
       <div className="relative z-10 flex flex-col items-center">
-        <div className="w-40 h-40 mb-6 rounded-full bg-secondary flex items-center justify-center shadow-lg">
-          <span className="text-text-secondary">Photo</span>
+        <div className="w-56 h-56 mb-6 rounded-full bg-secondary flex items-center justify-center shadow-lg overflow-hidden">
+          <img src={MeImg} alt="Yonatan Assefa" className="object-cover w-full h-full bg-secondary scale-110" style={{ borderRadius: '50% 60% 55% 45% / 60% 50% 55% 45%' }} />
         </div>
 
-        <p className="font-fun text-3xl text-accent-orange mb-4">
+        <p className="uppercase tracking-widest font-bold text-accent-orange text-base md:text-lg mb-4">
           Full-Stack Developer with Backend Specialization
         </p>
 
