@@ -57,7 +57,7 @@ const projects = [
     title: 'Todo Microservices Backend',
     description: `A microservices-based backend for a Todo app, built with Java Spring Boot. Features Auth, Profile, and Task services, each with its own database, communicating via REST APIs and RabbitMQ. Uses Docker Compose for orchestration and PostgreSQL for data storage. Designed for scalability, event-driven communication, and JWT-based authentication.`,
     tags: ['Java', 'Spring Boot', 'Microservices', 'RabbitMQ', 'PostgreSQL', 'Docker'],
-    githubLink: 'https://github.com/Ycrafts/todo-microservices-backend',
+    githubLink: 'https://github.com/Ycrafts/todo-microservices',
     images: [ScreenshotTodo1, ScreenshotTodo2, ScreenshotTodo3, ScreenshotTodo4],
   },
 ];
