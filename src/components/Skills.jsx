@@ -2,7 +2,8 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { FaReact, FaGitAlt, FaGithub, FaPython, FaJava, FaPhp, FaLaravel, FaBootstrap } from 'react-icons/fa';
 import { IoLogoJavascript } from 'react-icons/io5';
-import { SiDjango, SiSpringboot, SiFlutter, SiPostgresql, SiCplusplus } from 'react-icons/si';
+import { SiDjango, SiSpringboot, SiFlutter, SiPostgresql, SiCplusplus, SiDocker, SiRuby, SiRubyonrails } from 'react-icons/si';
+
 import { DiMsqlServer } from "react-icons/di";
 import { TbApi } from 'react-icons/tb';
 
@@ -22,10 +23,13 @@ const skills = [
   { name: 'C++', icon: <SiCplusplus size={40} /> },
   { name: 'Bootstrap', icon: <FaBootstrap size={40} /> },
   { name: 'REST APIs', icon: <TbApi size={40} /> },
+  { name: 'Docker', icon: <SiDocker size={40} /> },
+  { name: 'Ruby', icon: <SiRuby size={40} /> },
+  { name: 'Ruby on Rails', icon: <SiRubyonrails size={40} /> },
 ];
 
 const experiences = [
-    { year: '2025', role: 'Intern', company: 'Quantum Technologies PLC' },
+  { year: '2025', role: 'Intern', company: 'Quantum Technologies PLC' },
 ];
 
 const skillVariants = {
@@ -48,12 +52,12 @@ const Skills = () => {
           Skills &amp; Experience
         </h2>
         <div className="grid md:grid-cols-2 gap-16">
-          
+
           {/* Skills Grid */}
           <div className="grid grid-cols-3 sm:grid-cols-4 gap-x-8 gap-y-12">
             {skills.map((skill, index) => (
-              <motion.div 
-                key={skill.name} 
+              <motion.div
+                key={skill.name}
                 className="flex flex-col items-center text-center group"
                 variants={skillVariants}
                 initial="hidden"
@@ -73,8 +77,8 @@ const Skills = () => {
           <div>
             {experiences.map((exp, index) => (
               <div key={index} className="flex space-x-6 mb-8 relative">
-                 <div className="absolute left-[-22px] top-0 h-full w-0.5 bg-gray-300 dark:bg-gray-700"></div>
-                 <div className="w-4 h-4 rounded-full bg-accent-orange absolute left-[-29px] top-1.5 ring-4 ring-primary"></div>
+                <div className="absolute left-[-22px] top-0 h-full w-0.5 bg-gray-300 dark:bg-gray-700"></div>
+                <div className="w-4 h-4 rounded-full bg-accent-orange absolute left-[-29px] top-1.5 ring-4 ring-primary"></div>
                 <p className="text-accent-orange font-bold min-w-[60px]">{exp.year}</p>
                 <div>
                   <h3 className="font-bold text-text-primary text-xl">{exp.role}</h3>

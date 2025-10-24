@@ -1,16 +1,27 @@
 import React from 'react';
 import { TypeAnimation } from 'react-type-animation';
-import MeImg from '../assets/images/me.JPG';
+import MeImg from '../assets/images/me.png';
 
 const Hero = () => {
   return (
     <section className="min-h-screen flex flex-col justify-center items-center text-center p-8 relative overflow-hidden">
-      
+
       {/* Decorative Framing Curves */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 pointer-events-none select-none">
-        <svg viewBox="0 0 600 500" width="600" height="500" className="blob-bg">
-          <path fill="#E95A2B" fillOpacity="0.08" d="M421.5,41.5Q484,83,497,166.5Q510,250,453,312.5Q396,375,308,420Q220,465,144,410Q68,355,61,252.5Q54,150,134,90Q214,30,308,32Q402,34,421.5,41.5Z" />
-        </svg>
+      <div className="absolute top-1/2 left-[52%] -translate-x-1/2 -translate-y-1/2 pointer-events-none select-none">
+        <div className="blob-bg">
+          <svg viewBox="0 0 600 500" width="100%" height="100%">
+            <path
+              d="M421.5,41.5Q484,83,497,166.5Q510,250,453,312.5Q396,375,308,420Q220,465,144,410Q68,355,61,252.5Q54,150,134,90Q214,30,308,32Q402,34,421.5,41.5Z"
+              fill="none"
+              stroke="#E95A2B"
+              strokeOpacity="0.25"
+              strokeWidth="3"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              vectorEffect="non-scaling-stroke"
+            />
+          </svg>
+        </div>
       </div>
 
       <div className="relative z-10 flex flex-col items-center">

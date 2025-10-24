@@ -8,35 +8,38 @@ import { FiArrowUpRight } from 'react-icons/fi';
 import Screenshot1 from '../assets/images/local_services/Screenshot_20250622_112148.png';
 import Screenshot2 from '../assets/images/local_services/Screenshot_20250622_112336.png';
 import Screenshot3 from '../assets/images/local_services/Screenshot_20250622_112319.png';
-import ScreenshotA1 from '../assets/images/AACEAC/Screenshot 2025-06-22 130343.png';
-import ScreenshotA2 from '../assets/images/AACEAC/Screenshot 2025-06-22 130409.png';
-import ScreenshotA3 from '../assets/images/AACEAC/Screenshot 2025-06-22 130430.png';
-import ScreenshotA4 from '../assets/images/AACEAC/Screenshot 2025-06-22 130458.png';
-import ScreenshotA5 from '../assets/images/AACEAC/Screenshot 2025-06-22 130519.png';
-import ScreenshotA6 from '../assets/images/AACEAC/Screenshot 2025-06-22 130536.png';
 import ScreenshotM1 from '../assets/images/MyLib/Screenshot 2025-06-22 155212.png';
 import ScreenshotM2 from '../assets/images/MyLib/Screenshot 2025-06-22 155229.png';
-import ScreenshotTodo1 from '../assets/images/todo/Screenshot_20250622_195758.png';
-import ScreenshotTodo2 from '../assets/images/todo/Screenshot_20250622_200334.png';
-import ScreenshotTodo3 from '../assets/images/todo/Screenshot_20250622_200342.png';
-import ScreenshotTodo4 from '../assets/images/todo/Screenshot_20250622_200351.png';
+import LogforgeDashboard from '../assets/images/logforge/logforge_dashboard.jpeg';
+import FindJobs1 from '../assets/images/find_jobs/photo_1_2025-10-24_22-11-03.jpg';
+import FindJobs2 from '../assets/images/find_jobs/photo_2_2025-10-24_22-11-03.jpg';
 import { motion } from 'framer-motion';
 
 const projects = [
   {
+    title: 'LogForge – Unified Audit Logging (Django, Laravel)',
+    description: `LogForge is a cross-framework audit logging package that records create, update, delete, restore, and force_delete events with diffs, actor, IP, and request context. It offers DB or queue-based writers (Celery), flexible include/exclude and redaction rules, pruning/archiving commands, and an optional dashboard UI. Available on PyPI and Packagist.`,
+    tags: ['Django', 'Laravel', 'Audit Logging', 'Package'],
+    githubLink: 'https://github.com/Ycrafts/LogForge',
+    hostedLink: 'https://packagist.org/packages/logforge/logforge-laravel',
+    images: [LogforgeDashboard],
+    placeholder: true,
+  },
+  {
+    title: 'Find Jobs Telegram Bot',
+    description: `A modular Telegram bot that helps Ethiopian job seekers find relevant jobs based on their profile. It scrapes major job sites and Telegram channels, stores data in Supabase, matches jobs with AI (zero-shot by default), and sends alerts. Easy to run locally or deploy with Docker and Render/Railway.`,
+    tags: ['Telegram', 'Python', 'Supabase', 'Scraping', 'AI Matching', 'Docker'],
+    botLink: 'https://t.me/findmejobsbot',
+    images: [FindJobs1, FindJobs2],
+    placeholder: true,
+  },
+  {
     title: 'Local Services Aggregator System',
     description: 'This is a full-stack application that serves as a platform for aggregating local services. It connects customers who need services with local providers who can offer them. The system consists of a backend API built with Laravel and a mobile application for customers and providers built with Flutter.',
-    tags: ['Laravel','Laravel-Filament', 'Flutter', 'Postgresql'],
+    tags: ['Laravel', 'Laravel-Filament', 'Flutter', 'Postgresql'],
     githubLink: 'https://github.com/Ycrafts/Local_Services_Aggregator_System',
     liveLink: '#',
     images: [Screenshot1, Screenshot2, Screenshot3],
-  },
-  {
-    title: 'Employee Management System for Addis Ababa City Ethics and Anti-Corruption Commission',
-    description: `This project is a full-stack web application designed to serve as an employee tracking system for the Addis Ababa City Ethics and Anti-corruption Commission (AACEAC). It provides a comprehensive system for managing employees, their roles, and their positions within the commission's hierarchical organization. The system is composed of a Django REST Framework backend and a React frontend.\n\nThis project is still under active development. Only part of the planned functionality has been completed, and some features may be subject to change.\n\nFeatures include user authentication, hierarchical organizational structure management, employee management, data management with search and filter, and a robust RESTful API.`,
-    tags: ['Django', 'React'],
-    githubLink: 'https://github.com/Ycrafts/AACEAC',
-    images: [ScreenshotA1, ScreenshotA2, ScreenshotA3, ScreenshotA4, ScreenshotA5, ScreenshotA6],
   },
   {
     title: 'MyLib - Personal Digital Library',
@@ -50,15 +53,8 @@ const projects = [
     description: `⚠️ NOTICE: This project is an ongoing work-in-progress and is far from complete. Many features are incomplete or subject to change.\n\nHotelEcom is a Django-based e-commerce platform tailored for hotel-related products and services. The project is modular, with separate apps for accounts, products, orders, payments, notifications, and reviews.\n\nFeatures (Planned & In Progress):\n- User account management and authentication\n- Product listings and management\n- Order processing\n- Payment integration\n- Notifications system\n- Product reviews`,
     tags: ['Django', 'E-commerce', 'Python'],
     githubLink: 'https://github.com/Ycrafts/Hotel-Supplies-Ecommerce',
-    images: [], 
+    images: [],
     placeholder: true,
-  },
-  {
-    title: 'Todo Microservices Backend',
-    description: `A microservices-based backend for a Todo app, built with Java Spring Boot. Features Auth, Profile, and Task services, each with its own database, communicating via REST APIs and RabbitMQ. Uses Docker Compose for orchestration and PostgreSQL for data storage. Designed for scalability, event-driven communication, and JWT-based authentication.`,
-    tags: ['Java', 'Spring Boot', 'Microservices', 'RabbitMQ', 'PostgreSQL', 'Docker'],
-    githubLink: 'https://github.com/Ycrafts/todo-microservices',
-    images: [ScreenshotTodo1, ScreenshotTodo2, ScreenshotTodo3, ScreenshotTodo4],
   },
 ];
 
@@ -78,7 +74,7 @@ const Projects = () => {
         <h2 className="text-3xl font-bold text-text-primary text-center tracking-[0.3em] uppercase mb-16">
           Projects
         </h2>
-        
+
         <Swiper
           onSwiper={setSwiper}
           onSlideChange={handleSlideChange}
@@ -139,7 +135,7 @@ const Projects = () => {
                           <img
                             key={i}
                             src={img}
-                            alt={project.title + ' screenshot ' + (i+1)}
+                            alt={project.title + ' screenshot ' + (i + 1)}
                             className="object-contain h-full max-h-[450px] w-full bg-white"
                             style={{ width: `${100 / (project.images.length || 1)}%`, border: 'none', borderRadius: 0, boxShadow: 'none', background: 'none', margin: 0, padding: 0 }}
                           />
@@ -165,22 +161,34 @@ const Projects = () => {
                     {project.tags.map(tag => <span key={tag} className="bg-secondary text-text-secondary text-sm font-medium px-3 py-1 rounded-full">{tag}</span>)}
                   </div>
                   <div className="flex items-center space-x-4">
-                    <a href={project.githubLink} className="text-text-primary hover:text-accent-orange transition-colors" target="_blank" rel="noopener noreferrer"><FaGithub size={24} /></a>
+                    {project.githubLink && (
+                      <a href={project.githubLink} className="text-text-primary hover:text-accent-orange transition-colors" target="_blank" rel="noopener noreferrer"><FaGithub size={24} /></a>
+                    )}
+                    {project.hostedLink && (
+                      <a href={project.hostedLink} className="text-text-primary hover:text-accent-orange transition-colors" target="_blank" rel="noopener noreferrer">
+                        <FiArrowUpRight size={22} />
+                      </a>
+                    )}
+                    {project.botLink && (
+                      <a href={project.botLink} className="text-text-primary hover:text-accent-orange transition-colors" target="_blank" rel="noopener noreferrer">
+                        <FiArrowUpRight size={22} />
+                      </a>
+                    )}
                   </div>
                 </div>
               </div>
             </SwiperSlide>
           ))}
         </Swiper>
-        
+
         {/* Custom Navigation */}
-        <button 
+        <button
           className={`swiper-button-prev-custom absolute left-0 md:left-[-20px] top-1/2 -translate-y-1/2 z-10 transition-opacity ${isBeginning ? 'opacity-30 cursor-not-allowed' : 'opacity-100'}`}
           disabled={isBeginning}
         >
           <svg xmlns="http://www.w3.org/2000/svg" className="h-10 w-10 text-accent-orange" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" /></svg>
         </button>
-        <button 
+        <button
           className={`swiper-button-next-custom absolute right-0 md:right-[-20px] top-1/2 -translate-y-1/2 z-10 transition-opacity ${isEnd ? 'opacity-30 cursor-not-allowed' : 'opacity-100'}`}
           disabled={isEnd}
         >
