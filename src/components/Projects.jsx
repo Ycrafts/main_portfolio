@@ -22,7 +22,7 @@ import { motion } from 'framer-motion';
 const projects = [
   {
     title: 'Opportunity Finder (Findra)',
-    description: `Full-stack app for discovering opportunities, matching them to user profiles/preferences, and providing AI-assisted tools such as CV extraction, cover letter generation, and skill gap analysis. Includes a Next.js frontend, Django REST API backend, Celery workers for background tasks, and a separate Telegram bot service for notifications and alerts.`,
+    description: `Full-stack app for discovering opportunities, matching them to user profiles/preferences, and providing AI-assisted tools such as CV extraction, cover letter generation, and skill gap analysis. Includes a Next.js frontend, Django REST API backend, Celery workers, and a separate Telegram bot service for notifications/alerts. Background work can run via Celery/Beat or via secured /api/cron/* endpoints (for external schedulers).`,
     tags: ['Next.js', 'React', 'Django', 'Django REST Framework', 'Celery', 'Telegram', 'AI'],
     githubLink: 'https://github.com/Ycrafts/opportunities_finder',
     hostedLink: 'https://opportunities-finder.vercel.app/',
