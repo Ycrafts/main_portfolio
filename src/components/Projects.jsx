@@ -13,9 +13,22 @@ import ScreenshotM2 from '../assets/images/MyLib/Screenshot 2025-06-22 155229.pn
 import LogforgeDashboard from '../assets/images/logforge/logforge_dashboard.jpeg';
 import FindJobs1 from '../assets/images/find_jobs/photo_1_2025-10-24_22-11-03.jpg';
 import FindJobs2 from '../assets/images/find_jobs/photo_2_2025-10-24_22-11-03.jpg';
+import OpportunityFinder1 from '../assets/images/findra/1.png';
+import OpportunityFinder2 from '../assets/images/findra/2.png';
+import OpportunityFinder3 from '../assets/images/findra/3.png';
+import OpportunityFinder4 from '../assets/images/findra/4.png';
 import { motion } from 'framer-motion';
 
 const projects = [
+  {
+    title: 'Opportunity Finder (Findra)',
+    description: `Full-stack app for discovering opportunities, matching them to user profiles/preferences, and providing AI-assisted tools such as CV extraction, cover letter generation, and skill gap analysis. Includes a Next.js frontend, Django REST API backend, Celery workers for background tasks, and a separate Telegram bot service for notifications and alerts.`,
+    tags: ['Next.js', 'React', 'Django', 'Django REST Framework', 'Celery', 'Telegram', 'AI'],
+    githubLink: 'https://github.com/Ycrafts/opportunities_finder',
+    hostedLink: 'https://opportunities-finder.vercel.app/',
+    images: [OpportunityFinder1, OpportunityFinder2, OpportunityFinder3, OpportunityFinder4],
+    placeholder: true,
+  },
   {
     title: 'LogForge – Unified Audit Logging (Django, Laravel)',
     description: `LogForge is a cross-framework audit logging package that records create, update, delete, restore, and force_delete events with diffs, actor, IP, and request context. It offers DB or queue-based writers (Celery), flexible include/exclude and redaction rules, pruning/archiving commands, and an optional dashboard UI. Available on PyPI and Packagist.`,
@@ -91,7 +104,7 @@ const Projects = () => {
             <SwiperSlide key={index}>
               <div className="grid md:grid-cols-2 gap-12 items-center">
                 {/* Image Side */}
-                {project.title.includes('Employee Management System') || project.title.includes('MyLib') ? (
+                {project.title.includes('Employee Management System') || project.title.includes('MyLib') || project.title.includes('Opportunity Finder') || project.title.includes('Findra') ? (
                   <motion.div
                     initial={{ x: -100, opacity: 0 }}
                     whileInView={{ x: 0, opacity: 1 }}
