@@ -82,9 +82,9 @@ const Projects = () => {
   };
 
   return (
-    <section id="projects" className="py-20 px-8">
+    <section id="projects" className="py-20 px-4 sm:px-8">
       <div className="container mx-auto relative">
-        <h2 className="text-3xl font-bold text-text-primary text-center tracking-[0.3em] uppercase mb-16">
+        <h2 className="text-3xl font-bold text-text-primary text-center tracking-[0.2em] sm:tracking-[0.3em] uppercase mb-16">
           Projects
         </h2>
 

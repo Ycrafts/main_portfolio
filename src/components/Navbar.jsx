@@ -4,7 +4,7 @@ import ThemeToggleButton from './ThemeToggleButton';
 
 const Navbar = () => {
   return (
-    <nav className="fixed top-0 left-0 w-full p-8 z-10">
+    <nav className="fixed top-0 left-0 w-full p-4 sm:p-8 z-10">
       <div className="container mx-auto flex justify-end items-center">
         <div className="flex items-center space-x-6">
           <ThemeToggleButton />
@@ -20,4 +20,4 @@ const Navbar = () => {
   );
 };
 
-export default Navbar; 
+export default Navbar;

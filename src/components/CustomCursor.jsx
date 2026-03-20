@@ -3,6 +3,7 @@ import { motion, useSpring } from 'framer-motion';
 import { FaThumbsUp } from 'react-icons/fa';
 
 const CustomCursor = () => {
+  const [enabled, setEnabled] = useState(true);
   const [isHovering, setIsHovering] = useState(false);
   const [isProfileHover, setIsProfileHover] = useState(false);
 
@@ -12,13 +13,22 @@ const CustomCursor = () => {
   };
 
   useEffect(() => {
+    const mq = window.matchMedia('(pointer: coarse)');
+    const update = () => setEnabled(!mq.matches);
+    update();
+    mq.addEventListener('change', update);
+    return () => mq.removeEventListener('change', update);
+  }, []);
+
+  useEffect(() => {
+    if (!enabled) return;
     const manageMouseMove = (e) => {
       mouse.x.set(e.clientX);
       mouse.y.set(e.clientY);
     };
 
     window.addEventListener('mousemove', manageMouseMove);
-    
+
     const hoverElements = document.querySelectorAll('a, button');
     const profileImg = document.querySelector('img[alt="Profile"]');
 
@@ -47,11 +57,13 @@ const CustomCursor = () => {
         profileImg.removeEventListener('mouseleave', onProfileLeave);
       }
     };
-  }, []);
+  }, [enabled]);
 
   const size = isProfileHover ? 60 : isHovering ? 50 : 25;
   const borderWidth = isProfileHover ? '0px' : isHovering ? '3px' : '2px';
   const background = isProfileHover ? 'rgba(255,255,255,0.95)' : 'transparent';
+
+  if (!enabled) return null;
 
   return (
     <motion.div

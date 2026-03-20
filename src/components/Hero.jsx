@@ -4,7 +4,7 @@ import MeImg from '../assets/images/me.png';
 
 const Hero = () => {
   return (
-    <section className="min-h-screen flex flex-col justify-center items-center text-center p-8 relative overflow-hidden">
+    <section className="min-h-screen flex flex-col justify-start sm:justify-center items-center text-center pt-24 pb-12 px-4 sm:p-8 relative overflow-hidden">
 
       {/* Decorative Framing Curves */}
       <div className="absolute top-1/2 left-[52%] -translate-x-1/2 -translate-y-1/2 pointer-events-none select-none">
@@ -25,7 +25,7 @@ const Hero = () => {
       </div>
 
       <div className="relative z-10 flex flex-col items-center">
-        <div className="w-56 h-56 mb-6 rounded-full bg-secondary flex items-center justify-center shadow-lg overflow-hidden">
+        <div className="w-40 h-40 sm:w-56 sm:h-56 mb-6 rounded-full bg-secondary flex items-center justify-center shadow-lg overflow-hidden">
           <img src={MeImg} alt="Yonatan Assefa" className="object-cover w-full h-full bg-secondary scale-110" style={{ borderRadius: '50% 60% 55% 45% / 60% 50% 55% 45%' }} />
         </div>
 
@@ -47,12 +47,12 @@ const Hero = () => {
           ]}
           wrapper="h1"
           speed={50}
-          className="text-5xl md:text-7xl font-bold text-text-primary mb-8"
+          className="text-4xl sm:text-5xl md:text-7xl font-bold text-text-primary mb-8"
           repeat={Infinity}
         />
 
         {/* Navigation Links */}
-        <div className="flex items-center space-x-8 text-text-secondary uppercase tracking-widest text-sm">
+        <div className="grid grid-cols-2 gap-y-3 gap-x-10 sm:flex sm:flex-row items-center sm:space-x-8 text-text-secondary uppercase tracking-widest text-sm">
           <a href="#about" className="hover:text-accent-orange transition-colors">About</a>
           <a href="#skills" className="hover:text-accent-orange transition-colors">Skills & Experience</a>
           <a href="#projects" className="hover:text-accent-orange transition-colors">Projects</a>
@@ -63,4 +63,4 @@ const Hero = () => {
   );
 };
 
-export default Hero; 
+export default Hero;
